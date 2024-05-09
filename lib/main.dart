@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
             url: 'http://192.168.1.35',
             javascriptChannels: {
               JavascriptChannel(
-                  name: "sample",
+                  name: "communicationchannel",
                   onMessageReceived: (JavascriptMessage message) {
                     print(message.message);
                     getData();
@@ -85,6 +85,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   void sendDataToJavaScript() {
-    flutterWebviewPlugin.evalJavascript('setdeviceId(`$deviceId`)');
+    flutterWebviewPlugin.evalJavascript('serviceConfigure(`$deviceId`)');
   }
 }
